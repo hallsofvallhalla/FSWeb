@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<script src="libs/jquery-3.4.1.min.js"></script>
+<link href="libs/bootstrap/bootstrap.min.css" rel="stylesheet" />
+<script src="libs/bootstrap/bootstrap.min.js"></script>
+<script src="libs/jquery.cookie.js"></script>
+<script src="functions/login.js"></script>
+<link href="css/main.css" rel="stylesheet" />
+
+<body onload="init()">
+
+    <!-- Modal -->
+    <div class="modal fade" id="darkModalForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog form-dark" role="document">
+            <!--Content-->
+            <div class="modal-content card card-image" style="background-image: url('images/site/bg.jpg');">
+                <div class="text-white rgba-stylish-strong py-5 px-5 z-depth-4">
+                    <!--Header-->
+                    <div class="modal-header text-center pb-4">
+                        <div class="alert alert-danger" role="alert" id="loginAlert" style="display:none; width: 100%"></div>
+                    </div>
+                    <!--Body-->
+                    <div class="modal-body">
+                        <div class="md-form mb-5">
+                            <input type="text" id="Form-username" class="form-control validate white-text">
+                            <label data-error="wrong" data-success="right" for="Form-username">Username</label>
+                        </div>
+
+                        <div class="md-form pb-3">
+                            <input type="password" id="Form-pass5" class="form-control validate white-text">
+                            <label data-error="wrong" data-success="right" for="Form-pass5">Your password</label>
+                            <div class="form-group mt-4">
+                                <input class="form-check-input" type="checkbox" id="checkbox624">
+                                <label for="checkbox624" class="white-text form-check-label">
+                                    Accept the<a href="#" class="green-text font-weight-bold">
+                                        Terms and Conditions
+                                    </a>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!--Grid row-->
+                        <div class="row d-flex align-items-center mb-4">
+
+                            <!--Grid column-->
+                            <div class="text-center mb-3 col-md-12">
+                                <button type="button" onclick="register()" class="btn btn-info btn-block btn-rounded z-depth-1">Sign up</button><br />
+                                <button type="button" onclick="login()" class="btn btn-success btn-block btn-rounded z-depth-1">Login</button>
+                            </div>
+                            <!--Grid column-->
+
+                        </div>
+                        <!--Grid row-->
+                        <!--Grid row-->
+                        <div class="row">
+
+                            <!--Grid column-->
+                            <div class="col-md-12" style="background-image: url('images/site/logo.jpg'); background-position: center; background-repeat:no-repeat; width:100%">
+
+                                <br /><br /><br />
+                            </div>
+                            <!--Grid column-->
+
+                        </div>
+                        <!--Grid row-->
+
+                    </div>
+                </div>
+            </div>
+            <!--/.Content-->
+        </div>
+    </div>
+    <!-- Modal -->
+
+   
+
+
+    <div class="container-fluid">
+     
+        <div class="row">
+            <div class="col-md-12">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-9">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    function init() {
+        if (!$.cookie("username")) {
+            if (!checkLogin()) {
+                $('#darkModalForm').modal({ backdrop: 'static', keyboard: false });
+                $("#darkModalForm").modal('show');
+                return;
+            }
+        }
+
+    }
+
+
+</script>
+
